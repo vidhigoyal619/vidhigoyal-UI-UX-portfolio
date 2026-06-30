@@ -142,10 +142,11 @@ a {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 11vw, 7.6rem);
-  line-height: 0.95;
-  letter-spacing: -0.075em;
-  max-width: 980px;
+  max-width: 850px;
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  font-weight: 800;
 }
 
 .hero-subtext {
