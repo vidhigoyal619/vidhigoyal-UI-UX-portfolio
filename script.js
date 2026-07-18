@@ -5,6 +5,13 @@ const projects = [
       design:'https://www.figma.com/design/CBvlmDQMFqR3Tv7X9K0qOH/Projects?node-id=145-3057&t=XzTStROmQYoyUEwu-1',
       medium:'https://www.figma.com/design/CBvlmDQMFqR3Tv7X9K0qOH/Projects?node-id=145-3057&t=XzTStROmQYoyUEwu-1'
     },
+    images: {
+  problem: 'assets/hrms/problem.png',
+  research: 'assets/hrms/research.png',
+  wireframe: 'assets/hrms/wireframe.png',
+  final: 'assets/hrms/final.png',
+  outcome: 'assets/hrms/outcome.png'
+},
     line:'Role-based dashboard for 200+ employees. +30% onboarding efficiency, −45% time to first action.',
     outcome:'How I cut time to first action by 45% for 200+ employees.',
     meta:['Product designer + front-end','1 designer · 3 engineers','12 weeks','200+ employees'],
@@ -21,6 +28,14 @@ const projects = [
       design:'https://www.figma.com/design/96KEV5NLp2eb6dLNckJVKH/Projects?node-id=2018-2293&t=qRTe4skww4007YKL-1',
       medium:'https://www.figma.com/design/96KEV5NLp2eb6dLNckJVKH/Projects?node-id=2018-2293&t=qRTe4skww4007YKL-1'
     },
+
+    images: {
+  problem: 'assets/veltrix/problem.png',
+  research: 'assets/veltrix/research.png',
+  wireframe: 'assets/veltrix/wireframe.png',
+  final: 'assets/veltrix/final.png',
+  outcome: 'assets/veltrix/outcome.png'
+},
 
   line:'A governed global hiring platform connecting verified employers with vetted recruitment agencies—from KYB to placement and mobilization.',
 
@@ -93,6 +108,14 @@ const projects = [
       medium:'https://medium.com/@intut43/magtapp-designing-an-ai-powered-visual-learning-experience-c92f3b827c3a?sharedUserId=intut43'
     },
 
+    images: {
+  problem: 'assets/magtapp/problem.png',
+  research: 'assets/magtapp/research.png',
+  wireframe: 'assets/magtapp/wireframe.png',
+  final: 'assets/magtapp/final.png',
+  outcome: 'assets/magtapp/outcome.png'
+},
+
   line:'Designed an AI-powered visual dictionary that helps readers understand unfamiliar words without interrupting their reading flow.',
 
   outcome:'Transforming word lookup into a contextual learning experience.',
@@ -162,6 +185,14 @@ const projects = [
       medium:'https://www.figma.com/design/96KEV5NLp2eb6dLNckJVKH/Projects?node-id=2018-2293&t=qRTe4skww4007YKL-1'
     },
 
+    images: {
+  problem: 'assets/woopw/problem.png',
+  research: 'assets/woopw/research.png',
+  wireframe: 'assets/woopw/wireframe.png',
+  final: 'assets/woopw/final.png',
+  outcome: 'assets/woopw/outcome.png'
+},
+
   line:'Redesigned a prescription medicine journey by replacing uncertainty with trust, guidance and transparent progress. +27% conversion, −21% bounce.',
 
   outcome:'Helping patients feel confident enough to complete a healthcare consultation.',
@@ -224,6 +255,14 @@ const projects = [
       medium:'https://medium.com/@intut43/whatsapp-scheduled-messaging-2b5b1792b7d0?sharedUserId=intut43'
     },
 
+    images: {
+  problem: 'assets/whatsapp/problem.png',
+  research: 'assets/whatsapp/research.png',
+  wireframe: 'assets/whatsapp/wireframe.png',
+  final: 'assets/whatsapp/final.png',
+  outcome: 'assets/whatsapp/outcome.png'
+},
+
   line:'Designing future communication that helps users send messages at the right moment without changing WhatsApp’s familiar experience.',
 
   outcome:'Helping users prepare conversations in advance while keeping messaging effortless, contextual and trustworthy.',
@@ -284,15 +323,110 @@ const projects = [
 }
 ];
 
-const art = (name, stage) => `<div class="screen-art"><div class="screen-top"><i></i><i></i><i></i><span>${name}</span></div><div class="screen-body"><aside><b>VG</b><i></i><i></i><i></i></aside><div class="screen-content"><small>${stage}</small><h5></h5><p></p><div class="fake-grid"><i></i><i></i><i></i></div><div class="bars"><b></b><b></b><b></b><b></b><b></b></div></div></div></div>`;
+const projectImage = (src, alt, className = '') => {
+  if (!src) return '';
+
+  return `
+    <figure class="case-image ${className}">
+      <img
+        src="${src}"
+        alt="${alt}"
+        loading="lazy"
+        draggable="false"
+      />
+    </figure>
+  `;
+};
 const card = (p, n) => {
   const labels=['Problem','Research','Decisions','Process','Outcome','Reflection'];
   let body='';
-  if(n===0) body=`<span class="kicker">The challenge</span><h3>${p.problem[0]}</h3><p>${p.problem[1]}</p>${art(p.title,'CURRENT EXPERIENCE')}`;
-  if(n===1) body=`<div class="chips">${p.research[0].map(x=>`<span>${x}</span>`).join('')}</div><h3>Evidence before interface.</h3><p>${p.research[1]}</p><blockquote><b>Key finding</b>${p.research[2]}</blockquote>${art(p.title,'RESEARCH SIGNALS')}`;
+  if(n === 0) body = `
+  <span class="kicker">The challenge</span>
+
+  <h3>${p.problem[0]}</h3>
+
+  <p>${p.problem[1]}</p>
+
+  ${projectImage(
+    p.images.problem,
+    `${p.title} problem screen`
+  )}
+`;
+  if(n === 1) body = `
+  <div class="chips">
+    ${p.research[0]
+      .map(item => `<span>${item}</span>`)
+      .join('')}
+  </div>
+
+  <h3>Evidence before interface.</h3>
+
+  <p>${p.research[1]}</p>
+
+  <blockquote>
+    <b>Key finding</b>
+    ${p.research[2]}
+  </blockquote>
+
+  ${projectImage(
+    p.images.research,
+    `${p.title} research artifacts`
+  )}
+`;
   if(n===2) body=`<span class="kicker">From evidence to interface</span><h3>Three decisions that shaped the product.</h3><div class="decision-list">${p.decisions.map((d,i)=>`<div><b>Decision 0${i+1}</b><h4>${d[0]}</h4><p>${d[1]}</p></div>`).join('')}</div>`;
-  if(n===3) body=`<span class="kicker">Evolution</span><h3>From broad structure to a focused flow.</h3><p>${p.process}</p><div class="compare"><div><small>EARLY WIREFRAME</small>${art(p.title,'EARLY')}</div><div><small>FINAL DIRECTION</small>${art(p.title,'FINAL')}</div></div>`;
-  if(n===4) body=`<span class="kicker">Impact</span><h3>What changed after the work.</h3><p>${p.rollout}</p><div class="metric-grid">${p.metrics.map(m=>`<div><strong>${m[0]}</strong><span>${m[1]}</span></div>`).join('')}</div>`;
+  if(n === 3) body = `
+  <span class="kicker">Evolution</span>
+
+  <h3>From broad structure to a focused flow.</h3>
+
+  <p>${p.process}</p>
+
+  <div class="compare">
+    <div class="compare-item">
+      <small>EARLY WIREFRAME</small>
+
+      ${projectImage(
+        p.images.wireframe,
+        `${p.title} early wireframe`,
+        'comparison-image'
+      )}
+    </div>
+
+    <div class="compare-item">
+      <small>FINAL DIRECTION</small>
+
+      ${projectImage(
+        p.images.final,
+        `${p.title} final design`,
+        'comparison-image'
+      )}
+    </div>
+  </div>
+`;
+  if(n === 4) body = `
+  <span class="kicker">Impact</span>
+
+  <h3>What changed after the work.</h3>
+
+  <p>${p.rollout}</p>
+
+  <div class="metric-grid">
+    ${p.metrics
+      .map(metric => `
+        <div>
+          <strong>${metric[0]}</strong>
+          <span>${metric[1]}</span>
+        </div>
+      `)
+      .join('')}
+  </div>
+
+  ${projectImage(
+    p.images.outcome,
+    `${p.title} final product outcome`,
+    'outcome-image'
+  )}
+`;
   if(n===5) body=`<span class="kicker">Looking back</span><h3>What I’d do differently.</h3><p class="reflection">${p.reflection}</p><a class="back" href="#work">Back to selected work ↑</a>`;
   return `<article class="stage"><aside class="stage-rail"><b>0${n+1}</b><span>${labels[n]}</span></aside><div class="stage-body">${body}</div></article>`;
 };
