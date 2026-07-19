@@ -12,15 +12,15 @@ const projects = [
   final: 'assets/hrms/final.png',
   outcome: 'assets/hrms/outcome.png'
 },
-    line:'Role-based dashboard for 200+ employees. +30% onboarding efficiency, −45% time to first action.',
+    line:'Designed role-based attendance, leave and approval workflows for a 200+ employee organisation, helping people reach their next action with less navigation and uncertainty.',
     outcome:'How I cut time to first action by 45% for 200+ employees.',
     meta:['Product designer + front-end','1 designer · 3 engineers','12 weeks','200+ employees'],
-    problem:['People logged in—and didn’t know what to do next.','Four roles shared a dashboard that treated every user the same. Attendance, leave and approvals competed for attention, creating repeat support questions and slow first actions. Support tickets and stakeholder walkthroughs exposed the same issue: the interface mirrored the database, not the workday.'],
-    research:[['Contextual observation','Support-ticket audit','Stakeholder interviews'],'I shadowed employees and HR admins completing everyday tasks, then grouped friction by role and frequency.','Employees did not need more dashboard data. They needed one unmistakable next action, based on role and time of day.'],
-    decisions:[['Lead with the next action','Observation showed attendance was the first task for 8 in 10 sessions, so check-in became the visual anchor.'],['Design by permission, not page','Ticket patterns showed irrelevant controls caused hesitation. Modules now appear only when a role can act on them.'],['Make status self-explanatory','Repeated “was this submitted?” tickets led to plain-language states with timestamps and ownership.']],
-    process:'The first wireframe was information-dense. Two walkthrough rounds turned it into a calmer action-first dashboard with progressive detail.',
-    rollout:'Released role by role to employees, HR, admin and super admin over four weeks.', metrics:[['30%','Faster onboarding'],['45%','Faster first action'],['35%','Higher satisfaction'],['25%','Lower mobile bounce']],
-    reflection:'I would instrument role-level task success before launch—not after—so prioritisation could rely on behavioural evidence earlier.'
+    problem:['People logged in—and didn’t know what to do next.','Employees, HR teams and administrators entered the same dashboard but arrived with completely different responsibilities. The interface exposed modules according to the systems data structure rather than each roles daily priorities. Employees struggled to locate attendance and leave actions, while managers repeatedly checked pending approvals across separate areas. This created slower onboarding, avoidable support questions and uncertainty around task status. The challenge was not simply reorganising a dashboardâ€”it was creating one system that could adapt its priorities, navigation and actions according to role and permission.'],
+    research:[['Contextual observation','Support-ticket audit','Stakeholder interviews'],'I shadowed employees and HR admins completing everyday tasks, then grouped friction by role and frequency.','I reviewed recurring support questions, mapped existing attendance and approval journeys and observed employees and HR stakeholders completing frequent tasks. The analysis consistently pointed to irrelevant role controls, unclear submission states and the absence of a visually dominant next action.'],
+    decisions:[['Make the next action role-dependent','Attendance was a frequent first action for employees, while approvals mattered more to managers and HR. I avoided one universal hierarchy and created role-aware priorities. This introduced additional permission logic, but removed irrelevant controls and reduced navigation effort.'],['Expose capability through permission','The role matrix showed that visibility and action rights were not identical. Navigation and controls therefore respond to permission rather than job title alone. The trade-off was more state documentation for engineering, in exchange for a safer and clearer interface.'],['Treat status as part of the task','Repeated uncertainty around submissions showed that success feedback could not end at a toast. Persistent states, timestamps and ownership cues made pending, completed and rejected actions understandable after the moment of submission.']],
+    process:['From one dashboard for everyone to priorities shaped by role.', 'The initial assumption was that reorganising modules would solve the problem. Workflow reviews showed the deeper issue was priority and permission. Early wireframes still exposed too much information; the final direction used a shared structure with role-specific next actions, visible task states and progressive detail.'],
+    rollout:'The experience was released progressively across Employee, HR, Admin and Super Admin roles, allowing the team to review permission behaviour and operational feedback as modules were implemented.', metrics:[['30%','Reported onboarding improvement'],['45%','Reported reduction in time to first action'],['35%','Reported satisfaction improvement'],['25%','Reported reduction in mobile bounce']],
+    reflection:'I would define role-level task-success instrumentation before implementation, not after rollout. That would make prioritisation less dependent on qualitative signals and improve the quality of post-release comparison.'
   },
   {
   id:'veltrix', title:'Veltrix', tag:'B2B SaaS', accent:'#465fff', dark:true,
@@ -37,20 +37,21 @@ const projects = [
   outcome: 'assets/veltrix/outcome.png'
 },
 
-  line:'A governed global hiring platform connecting verified employers with vetted recruitment agencies—from KYB to placement and mobilization.',
+  line:'Translated a complex international recruitment model into connected Employer, Agency and Admin workflows covering KYB, mandates, candidates, compliance and mobilization.',
 
-  outcome:'Turning a fragmented, high-risk international recruitment process into one transparent and accountable workflow.',
+  outcome:'Making ownership, access and the next required action visible across a governed recruitment system.',
 
   meta:[ 'Product designer', '1 designer · product · engineering', '10 weeks', 'Employers · agencies · platform admins'],
 
-  problem:['Global recruitment was fragmented across forms, emails, spreadsheets and disconnected service providers.', 'Employers struggled to verify agencies, agencies lacked access to trusted opportunities, and platform teams had no unified way to govern documents, mandates, candidates, payments and disputes. With multiple countries, roles and compliance requirements involved, users needed clarity without being overwhelmed.'
+  problem:['Global recruitment was fragmented across forms, emails, spreadsheets and disconnected service providers.', 'International recruitment involved employers, agencies, candidates and platform administrators working across KYB verification, mandates, documents, interviews, payments and mobilization. Responsibility frequently changed between participants, but the product needed to maintain one reliable source of truth. The core challenge was not the number of features. It was making ownership, access, status and the next required action unmistakable across multiple roles and countries.'
   ],
 
   research:[
     [
       'Requirement mapping',
       'Workflow audit',
-      'Compliance workshops'
+      'Compliance workshops',
+      'User-story analysis'
     ],
     'I mapped the complete journey across Employer, Agency and Admin roles—including Partial KYB, Full KYB, mandate execution, candidate sourcing, interviews, offers, mobilization, payments and post-placement cases.',
     'The main challenge was not the number of steps. It was helping every participant understand what was required, who was responsible and what would happen next.'
@@ -58,20 +59,16 @@ const projects = [
 
   decisions:[
     [
-      'Separate journeys by responsibility',
-      'Employer, Agency and Admin workflows had different goals and permissions, so each received a dedicated workspace while sharing the same mandate and candidate data.'
-    ],
-    [
-      'Make verification progressive',
-      'A two-stage KYB model allowed users to explore the platform after basic onboarding while keeping sensitive actions locked until documents, agreements and admin approval were complete.'
+      'Use progressive KYB instead of one complete form',
+      'Requiring every business document before users understood the platform created unnecessary entry friction. I separated KYB into progressive stages: basic verification enabled exploration while sensitive actions stayed protected until full approval. The trade-off was additional state management, but it balanced activation with compliance.'
     ],
     [
       'Turn mandates into governed projects',
-      'Each hiring requirement became a structured mandate with defined candidate criteria, compensation, responsibilities, agency access, agreements and an auditable execution pipeline.'
+      'A mandate connected criteria, commercial terms, access, agreements and candidate progress. Treating it as a project created one auditable source of truth. This required a denser object model, but prevented workflows from fragmenting across separate modules.'
     ],
     [
-      'Keep ownership visible',
-      'Visa, medical, PCC, documents, tickets and other mobilization stages clearly display whether the Employer, Agency or Platform owns the next action.'
+      'Keep ownership visible through every hand-off',
+      'Mobilization tasks moved between Employer, Agency and Platform. Checklists and action queues explicitly named the current owner. The interface became more operational, but reduced reliance on email follow-ups and memory.'
     ],
     [
       'Reveal sensitive information progressively',
@@ -373,7 +370,7 @@ const card = (p, n) => {
     `${p.title} research artifacts`
   )}
 `;
-  if(n===2) body=`<span class="kicker">From evidence to interface</span><h3>Three decisions that shaped the product.</h3><div class="decision-list">${p.decisions.map((d,i)=>`<div><b>Decision 0${i+1}</b><h4>${d[0]}</h4><p>${d[1]}</p></div>`).join('')}</div>`;
+  if(n===2) body=`<span class="kicker">From evidence to interface</span><h3>Decisions that shaped the product.</h3><div class="decision-list">${p.decisions.map((d,i)=>`<div><b>Decision 0${i+1}</b><h4>${d[0]}</h4><p>${d[1]}</p></div>`).join('')}</div>`;
   if(n === 3) body = `
   <span class="kicker">Evolution</span>
 
