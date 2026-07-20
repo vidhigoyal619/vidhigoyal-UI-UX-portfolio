@@ -3,52 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vidhi Goyal — Product designer portfolio" />
+  <meta name="description" content="Vidhi Goyal — Product Designer turning complex workflows into clear, implementation-ready digital products." />
+  <meta name="theme-color" content="#f6f3ed" />
   <title>Vidhi Goyal — Product Designer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style1.css" />
 </head>
 <body>
-  <div class="cursor" aria-hidden="true"></div>
-  <nav class="nav">
-    <a class="logo" href="#top">VG<span>.</span></a>
-    <button class="menu" aria-label="Open navigation">Menu</button>
-    <div class="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
-    <div class="status"><i></i>Available for new opportunities</div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Vidhi Goyal home">VG<span>°</span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#contact">Let’s talk</a>
+    </div>
   </nav>
 
-  <header class="hero" id="top">
-    <div class="orbit" aria-hidden="true"></div>
-    <div class="hero-copy">
-      <p class="eyebrow reveal">Product designer — SaaS · HRMS · fintech · healthcare</p>
-      <h1 class="reveal">I design complex products to feel <em>clear, trustworthy and ready to ship.</em></h1>
-      <p class="subhead reveal">Product Designer with 2.7 years of experience turning business requirements, user needs and technical constraints into scalable web and mobile experiences. I work across discovery, workflow design, prototyping, design systems and implementation—collaborating closely with product and engineering teams.</p>
-      <div class="actions reveal"><a class="button" href="#work">View case studies <b>↓</b></a><a class="underlink" href="https://drive.google.com/file/d/190Xbc9un3emOtJYF_73miUn5ZECmK01S/view?usp=drive_link">Download résumé ↗</a></div>
-    </div>
-    <div class="stats reveal"><div><b>2.7</b><span>years in product design</span></div>
-        <div><b>7+</b><span>products across web and mobile</span></div>
-        <div><b>4</b><span>domains: SaaS, AI, HRMS and healthcare</span></div>
-        <div><b>Design + code</b><span>Figma to React handoff</span></div></div>
-  </header>
+  <main id="main">
+    <header class="hero" id="top">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-topline">
+        <span>Product Designer · Design + Code</span>
+        <span>Indore, India · Open to relocate</span>
+      </div>
 
-  <section class="work" id="work">
-    <div class="section-head reveal"><p>Selected work / 2023—26</p><h2>Products shaped by evidence,<br><em>not decoration.</em></h2></div>
-    <div class="project-grid" id="projectGrid"></div>
-    <div class="more-work reveal"><p>More work</p><span>Gym App</span><span>Beep</span><span>ProfitScout</span><span>Cogram</span></div>
-  </section>
+      <div class="hero-grid">
+        <div class="question-panel" aria-label="Introduction questions">
+          <p class="micro-label">Three reasons to continue</p>
+          <button class="question-chip is-active" data-answer="0" type="button"><span>01</span> What do you do?</button>
+          <button class="question-chip" data-answer="1" type="button"><span>02</span> What are you good at?</button>
+          <button class="question-chip" data-answer="2" type="button"><span>03</span> Why continue this interview?</button>
+        </div>
 
-  <div id="caseStudies"></div>
+        <div class="answer-stage" aria-live="polite">
+          <div class="answer is-active" data-answer-panel="0">
+            <p class="answer-label">I design products.</p>
+            <h1>I turn complex workflows into <em>clear, trustworthy products</em> that are ready to build.</h1>
+          </div>
+          <div class="answer" data-answer-panel="1">
+            <p class="answer-label">My strongest space.</p>
+            <h2>Multi-role systems, permissions, forms and states—made <em>simple without hiding the logic.</em></h2>
+          </div>
+          <div class="answer" data-answer-panel="2">
+            <p class="answer-label">What I bring.</p>
+            <h2>I think in user journeys, business rules and front-end reality—so decisions move <em>from Figma to product.</em></h2>
+          </div>
+        </div>
+      </div>
 
-  <section class="about panel" id="about"><span class="section-label">About / 01</span><div class="about-copy reveal"><h2>I’m Vidhi—</h2><p>a product designer who simplifies complex workflows into interfaces people don’t have to think about.</p><p>I’ve shipped <mark>500+ screens</mark> for products used by <mark>1M+ people</mark>, working close enough with engineers to know what “feasible” actually means—I build in React and Tailwind when it helps a decision land faster.</p><p>Outside design: acrylic painting, which is probably why I obsess over visual hierarchy more than most.</p><small>Currently using Claude, Cursor, and Figma Make to move faster through research and iteration—so more time goes into the decisions that actually matter.</small></div></section>
+      <div class="hero-bottom">
+        <p>2.7 years across B2B SaaS, AI mobile products, HRMS and healthcare—working from early requirements through prototype, design system, handoff and design QA.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">See selected work <span>↓</span></a>
+          <a class="button quiet" href="https://drive.google.com/file/d/190Xbc9un3emOtJYF_73miUn5ZECmK01S/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View résumé ↗</a>
+        </div>
+      </div>
 
-  <section class="toolkit panel"><span class="section-label">Toolkit / 02</span><div class="tool-rows reveal"><div><b>Design</b><p>Product Thinking · UX Strategy · User Research · Design Systems · Interaction Design</p></div><div class="build"><b>Build</b><p>React.js · Tailwind CSS · HTML/CSS</p><i>Real differentiator</i></div><div><b>Tools</b><p>Figma · FigJam · Illustrator · Cursor</p></div></div></section>
+      <!-- <div class="hero-marquee" aria-hidden="true">
+        <div>PRODUCT THINKING · WORKFLOW DESIGN · INTERACTION · DESIGN SYSTEMS · PROTOTYPING · REACT AWARENESS · PRODUCT THINKING · WORKFLOW DESIGN ·</div>
+      </div> -->
+    </header>
 
-  <section class="experience panel" id="experience"><span class="section-label">Experience / 03</span><div class="timeline reveal"><article><time>2025 — Present</time><div><h3>UI/UX Designer</h3><b>Kuvaka Tech</b><p>Sole designer across Veltrix, MagTapp, Beep, and ProfitScout—wireframes to motion, end to end.</p></div></article><article><time>2025</time><div><h3>Junior Software Engineer</h3><b>Startappss Systems · Design + front-end implementation</b><p>Designed and built the HRMS attendance module and role-based dashboard from scratch.</p></div></article><article><time>2023 — 2024</time><div><h3>UI/UX Designer</h3><b>Softinator TechLabs</b><p>Built a design system across web and mobile, cutting inconsistencies 60% and speeding delivery 40%.</p></div></article></div></section>
+    <section class="work section" id="work" aria-labelledby="work-title">
+      <div class="section-heading reveal">
+        <div><span>01</span><p>Selected work</p></div>
+        <div>
+          <h2 id="work-title">The work behind the <em>polished screens.</em></h2>
+          <p>Five projects showing how I frame product complexity, make trade-offs and work toward interfaces that engineering can actually ship.</p>
+        </div>
+      </div>
 
-  <section class="contact" id="contact"><p>Have a complex product?</p><h2 class="reveal">Let’s make it feel <em>obvious.</em></h2><p>Open to full-time product design roles.<br>Ahmedabad-based search, open to Hyderabad, Noida, and Gurugram.</p><div><a href="mailto:vidhigoyal619@gmail.com">vidhigoyal619@gmail.com ↗</a><a href="https://www.linkedin.com/in/vidhi-goyal-io" target="_blank" rel="noopener">LinkedIn ↗</a></div></section>
-  <footer><a class="logo" href="#top">VG<span>.</span></a><p>Designed with intent. Built with code.</p><a href="#top">Back to top ↑</a></footer>
+      <div class="case-list">
+        <article class="case-card reveal" data-accent="green">
+          <div class="case-media" tabindex="0" role="button" aria-label="Reveal Enterprise HRMS project preview">
+            <img src="assets/hrms-cover.png" alt="Enterprise HRMS role-based dashboard" loading="lazy" onerror="this.hidden=true" />
+            <div class="glass-cover"><span>Hover to reveal</span><b>Shipped product</b></div>
+          </div>
+          <div class="case-content">
+            <div class="case-index">01 / Enterprise SaaS</div>
+            <h3>Enterprise HRMS Platform</h3>
+            <p>Designed and implemented role-based attendance, leave and approval workflows for employees, HR, Admin and Super Admin—making the next action clearer across a 200+ employee organisation.</p>
+            <div class="case-links">
+              <a class="button primary" href="https://www.figma.com/design/CBvlmDQMFqR3Tv7X9K0qOH/Projects?node-id=145-3057&t=XzTStROmQYoyUEwu-1" target="_blank" rel="noopener noreferrer">View design ↗</a>
+              <span class="button disabled" aria-disabled="true">Read full case study ↗</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal" data-accent="orange">
+          <div class="case-media" tabindex="0" role="button" aria-label="Reveal Veltrix project preview">
+           
+            <img src="assets/veltrix-cover.png" alt="Veltrix global recruitment platform" loading="lazy" onerror="this.hidden=true" />
+            <div class="glass-cover"><span>Hover to reveal</span><b>In development</b></div>
+          </div>
+          <div class="case-content">
+            <div class="case-index">02 / B2B SaaS</div>
+            <h3>Veltrix Global Hiring Platform</h3>
+            <p>Translated international recruitment rules into connected Employer, Agency and Admin journeys covering KYB, mandates, candidates, compliance, finance and mobilization.</p>
+            <div class="case-links">
+              <a class="button primary" href="https://www.figma.com/design/96KEV5NLp2eb6dLNckJVKH/Projects?node-id=2018-2293&t=qRTe4skww4007YKL-1" target="_blank" rel="noopener noreferrer">View design ↗</a>
+              <a class="button quiet" href="https://medium.com/@intut43/designing-veltrix-turning-global-hiring-complexity-into-one-governed-workflow-449d7b5d4d25?sharedUserId=intut43">Read full case study ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal" data-accent="blue">
+          <div class="case-media" tabindex="0" role="button" aria-label="Reveal MagTapp project preview">
+            
+            <img src="assets/magtapp-cover.png" alt="MagTapp Visual Dictionary mobile experience" loading="lazy" onerror="this.hidden=true" />
+            <div class="glass-cover"><span>Hover to reveal</span><b>Released feature</b></div>
+            
+          </div>
+          <div class="case-content">
+            <div class="case-index">03 / AI Mobile Product</div>
+            <h3>MagTapp Visual Dictionary</h3>
+            <p>Designed Visual Dictionary and Tap-to-Search so readers could understand unfamiliar words without losing their position—inside a product ecosystem with 1M+ downloads.</p>
+            <div class="case-links">
+              <a class="button primary" href="https://www.figma.com/design/96KEV5NLp2eb6dLNckJVKH/Projects?node-id=51-2&t=qRTe4skww4007YKL-1" target="_blank" rel="noopener noreferrer">View design ↗</a>
+              <a class="button quiet" href="https://medium.com/@intut43/magtapp-designing-an-ai-powered-visual-learning-experience-c92f3b827c3a?sharedUserId=intut43" target="_blank" rel="noopener noreferrer">Read full case study ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal" data-accent="pink">
+          <div class="case-media" tabindex="0" role="button" aria-label="Reveal Woopw project preview">
+           
+            <img src="assets/woopw-cover.png" alt="Woopw guided healthcare consultation" loading="lazy" onerror="this.hidden=true" />
+            <div class="glass-cover"><span>Hover to reveal</span><b>Healthcare project</b></div>
+          </div>
+          <div class="case-content">
+            <div class="case-index">04 / Healthcare</div>
+            <h3>Woopw Prescription Journey</h3>
+            <p>Reframed a low-trust medical questionnaire into a guided consultation that explains sensitive questions, communicates progress and makes clinical review visible.</p>
+            <div class="case-links">
+              <a class="button primary" href="https://www.figma.com/design/96KEV5NLp2eb6dLNckJVKH/Projects?node-id=2018-2293&t=qRTe4skww4007YKL-1" target="_blank" rel="noopener noreferrer">View design ↗</a>
+               <a class="button quiet" href="https://medium.com/@intut43/woopw-improving-the-patient-journey-for-prescription-only-medicines-531b3107d44c?sharedUserId=intut43" target="_blank" rel="noopener noreferrer">Read full case study ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card reveal" data-accent="mint">
+          <div class="case-media" tabindex="0" role="button" aria-label="Reveal WhatsApp scheduling project preview">
+            
+            <img src="assets/whatsapp-cover.png" alt="WhatsApp Scheduled Messaging concept" loading="lazy" onerror="this.hidden=true" />
+            <div class="glass-cover"><span>Hover to reveal</span><b>Independent concept</b></div>
+          </div>
+          <div class="case-content">
+            <div class="case-index">05 / Independent Concept</div>
+            <h3>WhatsApp Scheduled Messaging</h3>
+            <p>Explored how future communication could fit into WhatsApp’s familiar behaviour—without turning the composer into a productivity dashboard.</p>
+            <div class="case-links">
+              <a class="button primary" href="https://www.figma.com/design/gUWfm9CJhy8chi8eiwvtFv/WhatsApp-Scheduled-Messaging?node-id=0-1&t=8PVhwEiglsn70kUr-1" target="_blank" rel="noopener noreferrer">View design ↗</a>
+              <a class="button quiet" href="https://medium.com/@intut43/whatsapp-scheduled-messaging-2b5b1792b7d0?sharedUserId=intut43" target="_blank" rel="noopener noreferrer">Read full case study ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading reveal">
+        <div><span>02</span><p>Experience</p></div>
+        <div><h2 id="experience-title">Designing close enough to engineering to know what <em>“ready” means.</em></h2></div>
+      </div>
+
+      <div class="experience-list">
+        <article class="experience-row reveal">
+          <time>Dec 2025 — Jun 2026</time>
+          <div><h3>UI/UX Designer</h3><b>Kuvaka Tech</b></div>
+          <p>Designed web and mobile experiences across MagTapp, Veltrix, Beep, ProfitScout and Cogram—from workflow definition and high-fidelity UI to prototypes, reusable patterns and developer handoff.</p>
+        </article>
+        <article class="experience-row reveal">
+          <time>Feb 2025 — Dec 2025</time>
+          <div><h3>Junior Software Engineer</h3><b>Startappss Systems · Design contribution</b></div>
+          <p>Designed and implemented responsive HRMS dashboards, attendance and approval experiences for four permission-based roles using React and Tailwind.</p>
+        </article>
+        <article class="experience-row reveal">
+          <time>2023 — 2024</time>
+          <div><h3>Product & Visual Work</h3><b>Early career projects</b></div>
+          <p>Built foundations across coordination, digital communication and interface work—learning how product decisions connect business expectations, users and delivery.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="skills section" aria-labelledby="skills-title">
+      <div class="section-heading compact reveal">
+        <div><span>03</span><p>My working mind</p></div>
+        <div><h2 id="skills-title">The skills connect.<br /><em>That’s the point.</em></h2></div>
+      </div>
+
+      <div class="mind-map reveal" aria-label="Connected product design skills">
+        <div class="mind-line line-a" aria-hidden="true"></div><div class="mind-line line-b" aria-hidden="true"></div><div class="mind-line line-c" aria-hidden="true"></div><div class="mind-line line-d" aria-hidden="true"></div>
+        <div class="mind-node center"><b>Product<br />Designer</b></div>
+        <div class="mind-node discovery"><b>Understand</b><p>Requirements · Research · Journey maps · User stories</p></div>
+        <div class="mind-node systems"><b>Structure</b><p>IA · Permissions · States · Design systems · Responsive logic</p></div>
+        <div class="mind-node interaction"><b>Make it usable</b><p>Wireframes · UI · Interaction · Motion · Prototypes</p></div>
+        <div class="mind-node delivery"><b>Help it ship</b><p>Figma · React awareness · Tailwind · Handoff · Design QA</p></div>
+        <div class="mind-node tools"><b>TOOLS</b><p>Figma · FigJam · Illustrator · Cursor · Claude · Figma Make</p></div>
+      </div>
+    </section>
+
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="about-layout">
+        <div class="about-stamp reveal"><span>ABOUT</span></div>
+        <div class="about-copy reveal">
+          <p class="micro-label">The person behind the product</p>
+          <h2 id="about-title">I like problems with <em>too many moving parts.</em></h2>
+          <p>I’m Vidhi, a Product Designer with a front-end foundation. My best work lives inside complex products—multiple roles, permissions, forms, statuses and dependencies—where clarity has to be designed, not decorated.</p>
+          <p>I ask what changes for the user, what the business needs to protect, and what engineering can realistically build. Then I turn the answers into journeys, interface patterns and specifications people can act on.</p>
+          <p>Outside screens, I paint with acrylics and build things by hand. It keeps my visual eye sharp—and reminds me that the strongest ideas often begin messy.</p>
+          <div class="about-chips"><span>Creative thinker</span><span>Systems curious</span><span>Detail aware</span><span>Always learning</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <p class="micro-label reveal">Available for product design roles</p>
+      <h2 class="reveal" id="contact-title">Have something complex?<br /><em>Let’s make it clear.</em></h2>
+      <p class="reveal">Based in Indore · Open to Ahmedabad, Gurugram, Hyderabad, Noida and strong remote product teams.</p>
+      <div class="contact-actions reveal">
+        <a class="button light" href="mailto:vidhigoyal619@gmail.com">vidhigoyal619@gmail.com ↗</a>
+        <a class="button outline-light" href="https://www.linkedin.com/in/vidhi-goyal-io" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#top">VG<span>°</span></a>
+    <p>Designed with intent. Built with code.</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
